@@ -32,7 +32,10 @@ def find(items, needle):
     for i in items.keys():
         if needle.lower() in i.lower():
             res.append(i)
-    return res
+    result = ' '.join(res)
+    if res == []:
+        print("Ничего не найдено")
+    return result
 
 def show(items):
     if not items:
@@ -58,11 +61,9 @@ while True:
     elif res == 3:
         print("Введите слово для поиска товара")
         s = str(input())
-        print(find(goods, s))
+        print(str(find(goods, s)))
     elif res == 4:
         show(goods)
-    else:
-        print("Неверный аргумент")
 
 # add(goods, 'Вода', Decimal('2.5'), '2023-08-01')
 # add(goods, 'Вода', Decimal('2.5'), '2023-08-02')
